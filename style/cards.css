@@ -1,0 +1,97 @@
+.deck {
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &.empty {
+    filter: grayscale(1);
+
+    & .type::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: "↻";
+      font-size: 2rem;
+      transform: translate(-50%);
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 120px;
+  max-width: 90vw;
+  margin: 10px;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  transition: var(--transition);
+  text-align: center;
+  overflow-wrap: break-word;
+  cursor: pointer;
+  overflow: hidden;
+
+  &.dropped {
+    filter: blur(4px);
+    transform: scale(0.95);
+    cursor: default;
+  }
+
+  &.truth {
+    background-color: var(--color-truth);
+  }
+
+  &.dare {
+    background-color: var(--color-dare);
+  }
+
+  &.active {
+    width: 300px;
+    height: 180px;
+  }
+
+  & .type {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    color: var(--color-secondary);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  & .text {
+    padding-top: 0.4rem;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 150px;
+    height: 100px;
+
+    &.active {
+      width: 250px;
+      height: 150px;
+
+      & .type {
+        font-size: 1.2rem;
+      }
+
+      & .text {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

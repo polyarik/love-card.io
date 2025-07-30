@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Truth or Dare card game for friends" />
+    <title>Love Card.io - Truth or Dare</title>
+    <link rel="stylesheet" href="./style/layout.css" />
+    <link rel="stylesheet" href="./style/cards.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Love Card.io</h1>
+      <p class="subtitle">Truth or Dare Game</p>
+    </header>
+
+    <main class="game">
+      <section class="decks" aria-label="Card decks">
+        <article id="truths" class="deck" aria-labelledby="truths-label">
+          <h2 id="truths-label" class="sr-only">Truths Deck</h2>
+          <div class="card truth">
+            <span class="type">truth</span>
+          </div>
+        </article>
+
+        <article id="dares" class="deck" aria-labelledby="dares-label">
+          <h2 id="dares-label" class="sr-only">Dares Deck</h2>
+          <div class="card dare">
+            <span class="type">dare</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="activeCardArea" class="active-card-area">
+        <div
+          id="activeCard"
+          class="card active"
+          role="region"
+          aria-live="polite"
+        >
+          <span class="type"></span>
+          <span class="text"></span>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./program/index.js"></script>
+  </body>
+</html>
